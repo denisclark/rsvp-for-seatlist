@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import { signIn, useSession } from "next-auth/react";
-import { useEffect } from "react";
+import { signIn, useSession } from 'next-auth/react'
+import { useEffect } from 'react'
 
 export default function GoogleSignIn() {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession()
 
   useEffect(() => {
-    if (!(status === "loading") && !session) void signIn('google');
-    if (session) window.close();
-  }, [session, status]);
+    if (!(status === 'loading') && !session) void signIn('google')
+    if (session) window.close()
+  }, [session, status])
 
   return (
-    <div className="h-screen w-screen absolute top-0 left-0 bg-white"></div>
-  );
-};
+    <div className='absolute left-0 top-0 h-screen w-screen bg-white'></div>
+  )
+}
